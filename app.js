@@ -7,10 +7,19 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
+
+let arrayNotes = []
+
 app.get("/",function(req,res){
   res.render("home")
 })
 
+app.post("/add",function(req,res){
+  const givenText = req.body.textArea;
+  arrayNotes.push(givenText);
+  console.log(arrayNotes)
+  res.redirect("/");
+});
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");

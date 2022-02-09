@@ -1,3 +1,38 @@
-h1{
-  color: red;
+body{
+  font-family: 'Overpass', sans-serif;
+  background-color: #fafaff;
+}
+
+
+
+
+h2{
+  margin-bottom: 0;
+}
+
+
+/* classes */
+
+.special-navbar{
+  background-color: #2e70ff;
+  padding: 30px;
+}
+.white-color-txt{
+  color:white;
+}
+
+/* bootstrap classes */
+.btn{
+  padding: 0.35rem 0.75rem 0.34rem 0.75rem
+}
+
+.col-md-12{
+  padding: 20px 0px 0px 0px;
+}
+.form-group{
+  margin: 5% 25% 2% 25% ;
+}
+
+.form-control{
+  text-align: center;
 }
