@@ -11,12 +11,13 @@ app.set('view engine', 'ejs');
 let arrayNotes = []
 
 app.get("/",function(req,res){
-  res.render("home")
+  res.render("home",{listNotes : arrayNotes})
 })
 
 app.post("/add",function(req,res){
-  const givenText = req.body.textArea;
-  arrayNotes.push(givenText);
+  const givenTitle = req.body.titleGiven;
+  const givenContent = req.body.textArea
+  arrayNotes.push({title:givenTitle , content: givenContent});
   console.log(arrayNotes)
   res.redirect("/");
 });

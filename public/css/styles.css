@@ -20,6 +20,19 @@ h2{
 .white-color-txt{
   color:white;
 }
+.notes-container{
+  margin: 5%;
+}
+
+.note{
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
 
 /* bootstrap classes */
 .btn{

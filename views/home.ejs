@@ -16,7 +16,25 @@
 
     <form class="" action="/add" method="post">
       <div class="form-group">
-        <textarea class="form-control" name="textArea" id="exampleFormControlTextarea1" rows="5"></textarea>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Title</span>
+          </div>
+          <input type="text" name="titleGiven" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+
+        <!-- Text area -->
+        <!-- <textarea class="form-control" name="textArea" id="exampleFormControlTextarea1" rows="5"></textarea> -->
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Content</span>
+          </div>
+          <textarea row="5" name="textArea" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+
+
+        <!-- Button -->
         <div class="container">
           <div class="row">
               <div class="col-md-12 text-right">
@@ -24,8 +42,18 @@
               </div>
           </div>
         </div>
+
+
       </div>
     </form>
+    <div class="notes-container">
+      <% listNotes.forEach(function(post){ %>
+        <div class="note">
+          <h4><%= post.title %></h4>
+          <p><%= post.content %></p>
+        </div>
+      <% }) %>
+    </div>
 
   </body>
 </html>
