@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>HomePage</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
-  </head>
-  <body>
+<%- include("partials/header"); -%>
+
+    <!-- NavBar -->
     <div class="special-navbar">
       <h2 class="white-color-txt">Hercules' Design</h2>
     </div>
+
 
     <form class="" action="/add" method="post">
       <div class="form-group">
@@ -46,11 +38,13 @@
 
       </div>
     </form>
+
+
     <div class="notes-container">
       <% listNotes.forEach(function(post){ %>
         <div class="note">
-          <h4><%= post.title %></h4>
-          <p><%= post.content %></p>
+          <h4><a href="/notes/<%= post.simpleTitle %>"><%= post.title %></a></h4>
+          <p><%= post.content.substring(0, 100)%><a href="/notes/<%= post.simpleTitle %>">...</a></p>
         </div>
       <% }) %>
     </div>

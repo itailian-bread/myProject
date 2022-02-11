@@ -4,7 +4,12 @@ body{
 }
 
 
-
+a{
+  color:black;
+}
+a:hover{
+  text-decoration: none;
+}
 
 h2{
   margin-bottom: 0;
@@ -34,7 +39,22 @@ h2{
   float: left;
 }
 
+.fullNote{
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  margin: 1% 8% 2% 8% ;
+}
+
 /* bootstrap classes */
+.jumbotron{
+  margin: 5% 8% 2% 8% ;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 1.5%;
+}
+
 .btn{
   padding: 0.35rem 0.75rem 0.34rem 0.75rem
 }
@@ -43,7 +63,7 @@ h2{
   padding: 20px 0px 0px 0px;
 }
 .form-group{
-  margin: 5% 25% 2% 25% ;
+  margin: 5% 31% 2% 31% ;
 }
 
 .form-control{
