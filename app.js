@@ -10,6 +10,7 @@ app.set('view engine', 'ejs');
 
 
 let arrayNotes = []
+let idNum = 0
 
 app.get("/",function(req,res){
   res.render("home",{listNotes : arrayNotes})
@@ -18,14 +19,19 @@ app.get("/",function(req,res){
 app.post("/add",function(req,res){
   const givenTitle = req.body.titleGiven;
   const givenContent = req.body.textArea
-  arrayNotes.push({title:givenTitle , simpleTitle:givenTitle ,  content: givenContent});
+  const newIdGiven = idNum;
+  arrayNotes.push({title:givenTitle , simpleTitle:_.kebabCase(givenTitle) ,  idKey:newIdGiven ,  content: givenContent});
+  idNum += 1;
   console.log(arrayNotes)
   res.redirect("/");
 });
 
+
+
 app.get("/notes/:noteName", function(req,res){
-  const givenParam = req.params.noteName
-  const foundArray = arrayNotes.find(element => element.simpleTitle === givenParam);
+  const givenParam = (req.params.noteName)
+  const lastChr = givenParam.charAt(givenParam.length - 1)
+  const foundArray = arrayNotes.find(element => element.idKey == lastChr);
   res.render("fullNote" , {title:foundArray.title , content:foundArray.content})
 
 })
