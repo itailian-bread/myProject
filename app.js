@@ -22,9 +22,15 @@ app.post("/add",function(req,res){
   const newIdGiven = idNum;
   arrayNotes.push({title:givenTitle , simpleTitle:_.kebabCase(givenTitle) ,  idKey:newIdGiven ,  content: givenContent});
   idNum += 1;
-  console.log(arrayNotes)
   res.redirect("/");
 });
+
+app.post("/delete",function(req,res){
+  const givenId = (req.body.selectedId)
+  const newArray = arrayNotes.filter(note => note.idKey != givenId);
+  arrayNotes = newArray;
+  res.redirect("/");
+})
 
 
 
